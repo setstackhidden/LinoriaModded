@@ -4483,7 +4483,7 @@ function Library:CreateWindow(...)
 				InputService["MouseIconEnabled"] = state;
 				cursor["Visible"] = false;
 				cursor:Remove();
-			end);
+			end)();
 		end;
 
 		if (not Config.DontFade) then
