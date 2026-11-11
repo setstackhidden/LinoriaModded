@@ -3789,6 +3789,14 @@ function Library:Notify(Text, Time)
 		
 		task.wait(Time or 5);
 
+
+		task_delay(1, function()
+			if (NotifyOuter) then
+				NotifyOuter:Destroy();
+				NotifyOuter = nil;
+			end;
+		end);
+
 		NotifyOuter:TweenSize(UDim2.new(0, 0, 0, YSize), 'Out', 'Quad', 0.4, true);
 
 		task.wait(0.4);
